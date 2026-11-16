@@ -37,7 +37,7 @@ jobs:
       - name: Get VPN Gate nodes + check via Cloudflare Worker + build page
         run: python vpngate.py
         env:
-          CHECK_WORKER: "https://chocolate.topman168.ccwu.cc/check?sstp=vpn:vpn@"
+          CHECK_WORKER: ${{ secrets.CHECK_WORKER }}
           CHECK_CONCURRENCY: "32"
           CHECK_TIMEOUT: "90"
 
