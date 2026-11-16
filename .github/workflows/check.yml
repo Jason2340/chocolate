@@ -18,7 +18,6 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # 补充 GitHub Pages 官方部署环境声明
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -38,7 +37,7 @@ jobs:
       - name: Get VPN Gate nodes + check via Cloudflare Worker + build page
         run: python vpngate.py
         env:
-          CHECK_WORKER: "https://check.helei.kdns.fr/check?sstp=vpn:vpn@"
+          CHECK_WORKER: "https://kdns.fr@"
           CHECK_CONCURRENCY: "32"
           CHECK_TIMEOUT: "90"
 
