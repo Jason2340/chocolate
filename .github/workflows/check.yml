@@ -38,6 +38,7 @@ jobs:
         run: python vpngate.py
         env:
           CHECK_WORKER: "https://${{ secrets.CHECK_WORKER }}/check?sstp=vpn:vpn@"
+          EDT_DOMAIN: ${{ secrets.EDT_DOMAIN }}
           CHECK_CONCURRENCY: "32"
           CHECK_TIMEOUT: "90"
 
